@@ -1,0 +1,23 @@
+EXAMPLE CORP KEY MANAGEMENT PROCEDURE
+
+1. Purpose
+This procedure covers the lifecycle of cryptographic keys and API credentials used by the AI platform.
+
+2. Key storage
+2.1 Central store
+All secrets are stored in the central secret store and synced into workloads by the External Secrets Operator. Secret values are never committed to source control.
+
+2.2 Encryption at rest
+The central store encrypts every value with a key held in the hardware security module. Cluster datastores use envelope encryption.
+
+3. Rotation
+3.1 Schedule
+Model provider API keys rotate every 90 days. Database credentials rotate every 30 days. Signing keys rotate every 12 months.
+
+3.2 Zero-downtime rotation
+The new credential is issued while the old one is still valid. The old credential is revoked only after every consumer is verified healthy on the new one.
+
+4. Compromise response
+- Revoke the affected credential immediately.
+- Rotate every credential that shared its storage path.
+- Open a SEV1 incident if customer data may have been exposed.

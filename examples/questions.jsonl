@@ -1,0 +1,27 @@
+# Labeled retrieval questions for the example corpus. A hit must come from `doc` and contain `answer`.
+{"q": "How long are customer support transcript backups kept in Region B?", "doc": "retention-policy", "answer": "35 days"}
+{"q": "Primary storage retention for support transcripts in Region A", "doc": "retention-policy", "answer": "18 months"}
+{"q": "How long are authentication log backups retained in Region B?", "doc": "retention-policy", "answer": "2 years"}
+{"q": "How long do we keep model training snapshot backups?", "doc": "retention-policy", "answer": "180 days"}
+{"q": "Does a legal hold override the retention schedule?", "doc": "retention-policy", "answer": "Holds override every period"}
+{"q": "How quickly is customer-requested deletion completed in primary storage?", "doc": "retention-policy", "answer": "within 30 days"}
+{"q": "Are backups edited when a customer asks for deletion?", "doc": "retention-policy", "answer": "Backups are not edited in place"}
+{"q": "How often is the retention policy reviewed?", "doc": "retention-policy", "answer": "every 12 months"}
+{"q": "What production write access does a platform engineer have?", "doc": "access-control-standard", "answer": "Break-glass only"}
+{"q": "What production read access does a forward deployed engineer get?", "doc": "access-control-standard", "answer": "Customer tenant only"}
+{"q": "Can a data scientist write to staging?", "doc": "access-control-standard", "answer": "Data scientist › Staging › Write: No"}
+{"q": "What production read access do support agents have?", "doc": "access-control-standard", "answer": "Ticket-scoped"}
+{"q": "How long can break-glass access last?", "doc": "access-control-standard", "answer": "maximum of 4 hours"}
+{"q": "How often are privileged roles reviewed?", "doc": "access-control-standard", "answer": "every month"}
+{"q": "How fast is access removed after termination?", "doc": "access-control-standard", "answer": "within 1 hour of termination"}
+{"q": "What is the first response time for a SEV2 incident?", "doc": "incident-runbook", "answer": "SEV2 › First response: 15 minutes"}
+{"q": "How often is the status page updated during a SEV1?", "doc": "incident-runbook", "answer": "Every 30 minutes"}
+{"q": "When does a page escalate to the secondary on-call?", "doc": "incident-runbook", "answer": "within 10 minutes"}
+{"q": "Who appoints the incident commander?", "doc": "incident-runbook", "answer": "first responder appoints an incident commander"}
+{"q": "Should we roll back or fix forward?", "doc": "incident-runbook", "answer": "Prefer rollback over forward fixes"}
+{"q": "When is a postmortem due?", "doc": "incident-runbook", "answer": "within 5 business days"}
+{"q": "How often do model provider API keys rotate?", "doc": "key-management", "answer": "every 90 days"}
+{"q": "How often are database credentials rotated?", "doc": "key-management", "answer": "every 30 days"}
+{"q": "When is the old credential revoked during rotation?", "doc": "key-management", "answer": "revoked only after every consumer is verified healthy"}
+{"q": "What happens to secrets in source control?", "doc": "key-management", "answer": "never committed to source control"}
+{"q": "What protects values in the central store at rest?", "doc": "key-management", "answer": "hardware security module"}

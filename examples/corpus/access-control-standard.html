@@ -1,0 +1,32 @@
+<!doctype html>
+<html><head><title>Example Corp Access Control Standard</title></head>
+<body>
+<nav>Home | Policies | Standards</nav>
+<h1>Access Control Standard</h1>
+<p>This standard defines who can access Example Corp environments and how that access is granted, reviewed and removed.</p>
+<h2>1 Principles</h2>
+<p>Access follows least privilege. Every grant has an owner and an expiry. Shared accounts are not permitted.</p>
+<h2>2 Environment access matrix</h2>
+<p>The matrix below lists the default access each role receives. Anything beyond it needs an approved exception.</p>
+<table>
+  <caption>Default access by role and environment</caption>
+  <tr><th rowspan="2">Role</th><th colspan="2">Production</th><th colspan="2">Staging</th></tr>
+  <tr><th>Read</th><th>Write</th><th>Read</th><th>Write</th></tr>
+  <tr><th>Platform engineer</th><td>Yes</td><td>Break-glass only</td><td>Yes</td><td>Yes</td></tr>
+  <tr><th>Forward deployed engineer</th><td>Customer tenant only</td><td>No</td><td>Yes</td><td>Yes</td></tr>
+  <tr><th>Data scientist</th><td>Aggregated views only</td><td>No</td><td>Yes</td><td>No</td></tr>
+  <tr><th>Support agent</th><td>Ticket-scoped</td><td>No</td><td>No</td><td>No</td></tr>
+</table>
+<h2>3 Break-glass access</h2>
+<p>Break-glass access to production write is granted through the on-call tool for a maximum of 4 hours. Every session is recorded and reviewed by the security team within 2 business days.</p>
+<h2>4 Access reviews</h2>
+<h3>4.1 Frequency</h3>
+<p>Managers review their team's access every quarter. Privileged roles are reviewed every month.</p>
+<h3>4.2 Removal</h3>
+<p>Access is removed within 24 hours of a role change and within 1 hour of termination.</p>
+<ul>
+  <li>Automated deprovisioning is triggered by the HR system.</li>
+  <li>Manual removals are logged in the access ticket queue.</li>
+</ul>
+<footer>Example Corp internal</footer>
+</body></html>
